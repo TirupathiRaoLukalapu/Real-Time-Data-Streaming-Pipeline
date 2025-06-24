@@ -86,7 +86,7 @@ Monitor output
   =>Alerts triggered by Azure Logic Apps
   =>Cleaned data pushed to Snowflake via Snowpipe
 
-working on the coding part will update soon.
+
 
 
 
@@ -97,3 +97,6 @@ Daily Volume	~300,000 events
 Latency Improvement	15% reduction
 Manual Review Cut	35% decrease
 Fraud Attempts Caught	~80/month
+
+
+***working on the coding part will update soon.***
