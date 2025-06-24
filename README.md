@@ -86,7 +86,7 @@ Monitor output
   =>Alerts triggered by Azure Logic Apps
   =>Cleaned data pushed to Snowflake via Snowpipe
 
-
+working on the coding part will update soon.
 
 
 
