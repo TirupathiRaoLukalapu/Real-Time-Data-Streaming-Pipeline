@@ -1,102 +1,42 @@
-# Real-Time-Data-Streaming-Pipeline
-# 🛰️ Real-Time Data Streaming Pipeline
+# Spotify End-to-End-Data-Engineering-Project
+Building an ETL (Extract, Transform, Load) data pipeline using Spotify API on AWS. The pipeline will extract data from the API, transform into desired format and load into AWS Storage.
 
-This project demonstrates a real-time data streaming pipeline for processing financial transactions using **Apache Kafka**, **Apache Spark**, **AWS**, and **Snowflake**. It is designed to simulate and process large volumes of streaming data, perform real-time transformations, and store insights for analysis.
+## Introduction
+Imagine you have a client who is a music composer and wants to understand more about the current music industry.
+- Client wants to analyse what kind of songs & albums are trending
+- Find some patterns over the data
+- Compose music based on the analysis trends
+- To carry out all these, client needs a large dataset of Spotify Top songs-Global spanning over a period of time.
 
----
+![Top Songs-Global](https://github.com/Rajeev-Radhakrish/spotify-end-to-end-data-engineering-project/blob/main/Top%20Songs%20-%20Global.png)
 
-## 📌 Problem Statement
+## Objective
+- Spotify API integration to extract data
+- Deploying code on AWS Lambda for Data Extraction
+- Connecting trigger to run the extraction automatically
+- Writing transformation function & Building automated trigger on transformation function
+- Store files securely on Amazon S3
+- Building Analytics Tables on data files using Glue and Athena
 
-In financial systems, it's critical to process transaction data in real-time to detect anomalies, prevent fraud, and generate timely insights. This pipeline is built to:
+## Architecture Diagram
+![Architecture Diagram](https://github.com/Rajeev-Radhakrish/spotify-end-to-end-data-engineering-project/blob/main/Data%20Architecture.png)
 
-- Ingest high-volume transactions
-- Apply fraud detection logic in real time
-- Store clean data for downstream analytics
-- Trigger alerts for suspicious activity
+## About Dataset/API
+This API contains information about music artists, albums and songs - [Spotify API](https://developer.spotify.com/documentation)
 
----
+## Services used
+1. **S3 (Simple Storage Service):** Amazon S3 is a highly scalable object storage service that can store and retrieve any amount of data from web.
+2. **AWS Lambda:** Lambda is a computing service that allows programmers to run code without creating or managing servers.
+3. **Cloud Watch:** It is a monitoring service for resources and application. Used to collect and track metrics, monitor log files and set alarms.
+4. **Glue Crawler:** A fully managed service that automatically crawls data sources, identifies data formats, schemas to create AWS Glue Data Catalog.
+5. **Data Catalog:** AWS Glue Data catalog is a fully managed metadata repository for easy discovering and managing of data.
+6. **AWS Athena:** An interactive query service to analyse data in Amazon S3 using standard SQL.
 
-## ⚙️ Architecture Overview
-
-[Kafka Producer] → [Kafka Topic] → [Spark Structured Streaming]
-↓ ↓
-[Raw Events] [Cleaned Data]
-↓
-[Snowflake via Snowpipe]
-[Alerts via Azure Logic Apps]
-
-
----
-
-## 🧰 Tech Stack
-
-| Tool / Technology     | Purpose                                      |
-|-----------------------|----------------------------------------------|
-| **Apache Kafka**      | Message broker for streaming transactions    |
-| **Apache Spark**      | Stream processing & transformation           |
-| **Python**            | Fraud rule engine and orchestration scripts  |
-| **Snowflake**         | Cloud data warehouse for analytics           |
-| **AWS S3**            | Intermediate data storage for Snowpipe       |
-| **Azure Logic Apps**  | Real-time alerting and notifications         |
-
----
-
-## 🏗️ Key Features
-
-- Processes up to **300,000+ transactions/day**
-- Applies **risk-based fraud rules** in Python
-- Reduces fraud detection time by **25%**
-- Enables near **real-time monitoring** and alerting
-- Handles **over 50 GB/day** of streaming data
-
----
-
-## 📁 Project Structure
-
-
-eal-time-data-pipeline/
-│
-├── kafka_producer/ # Simulates streaming data
-├── spark_streaming/ # Spark Structured Streaming jobs
-├── fraud_detection_rules/ # Python-based rule engine
-├── snowflake_loader/ # Snowpipe integration
-└── docs/ # Architecture diagram, sample data
-
-
-
----
-
-## 🧪 How to Run (Local Setup)
-
-1. **Start Kafka locally**
-   ```bash
-   bin/zookeeper-server-start.sh config/zookeeper.properties
-   bin/kafka-server-start.sh config/server.properties
-
-2.Run Kafka producer
-bash
-python kafka_producer/stream_transactions.py
-Start Spark streaming
-
-3.bash
-spark-submit spark_streaming/process_stream.py
-Monitor output
-
-4.
-  =>Alerts triggered by Azure Logic Apps
-  =>Cleaned data pushed to Snowflake via Snowpipe
-
-
-
-
-
-
-📊 Results
-Metric	Value
-Daily Volume	~300,000 events
-Latency Improvement	15% reduction
-Manual Review Cut	35% decrease
-Fraud Attempts Caught	~80/month
-
-
-***working on the coding part will update soon.***
+## Package installation
+```
+pip install pandas
+pip install numpy
+pip install spotipy
+```
+## Flow of Execution
+Extract data from API -> Lambda Trigger -> Run Extract Code -> Store Raw data -> Trigger transform function -> Transform Data and Loading it -> Query using Athena
