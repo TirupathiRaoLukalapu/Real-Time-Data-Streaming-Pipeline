@@ -8,7 +8,7 @@ Imagine you have a client who is a music composer and wants to understand more a
 - Compose music based on the analysis trends
 - To carry out all these, client needs a large dataset of Spotify Top songs-Global spanning over a period of time.
 
-![Top Songs-Global](https://github.com/Rajeev-Radhakrish/spotify-end-to-end-data-engineering-project/blob/main/Top%20Songs%20-%20Global.png)
+![Top Songs-Global](https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline/blob/main/Spotify-End-to-End-Data-Engineering-Project-main/Top%20Songs%20-%20Global.png)
 
 ## Objective
 - Spotify API integration to extract data
