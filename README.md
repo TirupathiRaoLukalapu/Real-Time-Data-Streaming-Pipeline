@@ -19,7 +19,7 @@ Imagine you have a client who is a music composer and wants to understand more a
 - Building Analytics Tables on data files using Glue and Athena
 
 ## Architecture Diagram
-![Architecture Diagram](https://github.com/Rajeev-Radhakrish/spotify-end-to-end-data-engineering-project/blob/main/Data%20Architecture.png)
+![Architecture Diagram](https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline/blob/main/Spotify-End-to-End-Data-Engineering-Project-main/Data%20Architecture.png)
 
 ## About Dataset/API
 This API contains information about music artists, albums and songs - [Spotify API](https://developer.spotify.com/documentation)
